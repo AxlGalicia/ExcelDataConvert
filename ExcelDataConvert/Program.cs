@@ -1,2 +1,21 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using ExcelDataConvert.configurations;
+
+namespace ExcelDataReader 
+{
+
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+
+            configurations config = new configurations();
+            config.getconfigurations();
+
+        }
+
+
+
+    }
+
+}
