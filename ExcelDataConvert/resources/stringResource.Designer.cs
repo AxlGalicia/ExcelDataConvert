@@ -61,6 +61,24 @@ namespace ExcelDataConvert.resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to  Bye....
+        /// </summary>
+        internal static string stringBye {
+            get {
+                return ResourceManager.GetString("stringBye", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  Convirtiendo documento a Csv........................................................................
+        /// </summary>
+        internal static string stringConvertProcess {
+            get {
+                return ResourceManager.GetString("stringConvertProcess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to  Elija que numero de hoja desea convertir:  .
         /// </summary>
         internal static string stringNumberSheet {
@@ -84,6 +102,15 @@ namespace ExcelDataConvert.resources {
         internal static string stringPathExcel {
             get {
                 return ResourceManager.GetString("stringPathExcel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  Process Success!.
+        /// </summary>
+        internal static string stringProcessSuccess {
+            get {
+                return ResourceManager.GetString("stringProcessSuccess", resourceCulture);
             }
         }
         
@@ -124,7 +151,7 @@ namespace ExcelDataConvert.resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  Desea convertir el archivo Excel con estas opciones? Si/No : .
+        ///   Looks up a localized string similar to  Desea convertir el archivo Excel con estas opciones? Si/No/Cancel : .
         /// </summary>
         internal static string stringSummaryConfirmation {
             get {

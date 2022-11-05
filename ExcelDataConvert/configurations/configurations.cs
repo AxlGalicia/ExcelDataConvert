@@ -19,7 +19,7 @@ namespace ExcelDataConvert.configurations
             //Console.WriteLine("Welcome to configurations");
         }
 
-        public void getconfigurations()
+        public Boolean getconfigurations()
         {
             Console.Write(stringResource.stringPathExcel);
             pathExcel = Console.ReadLine() ?? "";
@@ -30,11 +30,11 @@ namespace ExcelDataConvert.configurations
             Console.Write(stringResource.stringPathCsv);
             pathCsv = Console.ReadLine() ?? "";
 
-            confirmOperations();
+            return confirmOperations();
 
         }
 
-        public void  confirmOperations()
+        public Boolean  confirmOperations()
         {
             string confirmation = "";
 
@@ -46,18 +46,23 @@ namespace ExcelDataConvert.configurations
             Console.WriteLine(stringResource.stringSummaryBodySheet+ sheetOption);
             Console.WriteLine();
             Console.Write(stringResource.stringSummaryConfirmation);
-            confirmation = Console.ReadLine();
+            confirmation = Console.ReadLine()??"Cancel";
 
             if(confirmation == "Si" || confirmation == "si")
             {
-                Console.WriteLine("Convirtiendo documento a Csv..................................................");
-                conversionProcess conver = new conversionProcess();
-                conver.convertCsv(pathExcel,pathCsv,sheetOption);
+                Console.WriteLine();
+                //Console.WriteLine("Convirtiendo documento a Csv..................................................");
+                return true;
+                //conversionProcess conver = new conversionProcess();
+                //conver.convertCsv(pathExcel,pathCsv,sheetOption);
             }
-            else
+            else if(confirmation == "Cancel" || confirmation == "cancel")
+            {
+                return false;
+            }else
             {
                 Console.Clear();
-                getconfigurations();
+                return getconfigurations();
             }
 
 

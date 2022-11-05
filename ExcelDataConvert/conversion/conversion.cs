@@ -1,4 +1,5 @@
-﻿using ExcelDataReader;
+﻿using ExcelDataConvert.resources;
+using ExcelDataReader;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -46,7 +47,7 @@ namespace ExcelDataConvert.conversion
 
                         for (int i = 0; i < totalColumns; i++)
                         {
-                            dato = table.Rows[x][i].ToString();
+                            dato = table.Rows[x][i].ToString()??"";
 
                             if (i < (totalColumns - 1))
                             {
@@ -67,7 +68,7 @@ namespace ExcelDataConvert.conversion
                     }
 
                    // Console.WriteLine(resulCvs);
-                   Console.WriteLine("Process Success!");
+                   Console.WriteLine(stringResource.stringProcessSuccess);
 
                 }
             }
@@ -94,7 +95,7 @@ namespace ExcelDataConvert.conversion
                     pathResult = pathResult + pathParts[i];
                 }
             }
-            Console.WriteLine("Este es el path ingresado: " + pathResult);
+            //Console.WriteLine("Este es el path ingresado: " + pathResult);
 
             return pathResult;
 
