@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ExcelDataConvert.conversion;
 using ExcelDataConvert.resources;
 
 
@@ -10,13 +11,9 @@ namespace ExcelDataConvert.configurations
 {
     public  class configurations
     {
-
-       /* public string pathExcel = "";
-        public string pathCsv = "";
-        public string sheetOption = "";*/
-        public string pathExcel { get; set; }
-        public string pathCsv { get; set; }
-        public string sheetOption { get; set; }
+        public string pathExcel { get; set; } = String.Empty;
+        public string pathCsv { get; set; } = String.Empty;
+        public string sheetOption { get; set; } = String.Empty; 
         public configurations()
         {
             //Console.WriteLine("Welcome to configurations");
@@ -25,19 +22,19 @@ namespace ExcelDataConvert.configurations
         public void getconfigurations()
         {
             Console.Write(stringResource.stringPathExcel);
-            pathExcel = Console.ReadLine();
+            pathExcel = Console.ReadLine() ?? "";
 
             Console.Write(stringResource.stringNumberSheet);
-            sheetOption = Console.ReadLine();
+            sheetOption = Console.ReadLine()?? "";
 
             Console.Write(stringResource.stringPathCsv);
-            pathCsv = Console.ReadLine();
+            pathCsv = Console.ReadLine() ?? "";
 
             confirmOperations();
 
         }
 
-        public void confirmOperations()
+        public void  confirmOperations()
         {
             string confirmation = "";
 
@@ -54,6 +51,8 @@ namespace ExcelDataConvert.configurations
             if(confirmation == "Si" || confirmation == "si")
             {
                 Console.WriteLine("Convirtiendo documento a Csv..................................................");
+                conversionProcess conver = new conversionProcess();
+                conver.convertCsv(pathExcel,pathCsv,sheetOption);
             }
             else
             {
